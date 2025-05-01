@@ -26,6 +26,9 @@ class Gemma(Model):
 
 
 g1 = Gemma(name="gemma3-1b", path="google/gemma-3-1b-it")
+# g27 = Gemma(name="gemma3-27b", path="google/gemma-3-27b-it")
+# gpt = Model(name="gpt2", path="gpt2")
+llama = Model(name="llama3.2-3b", path="meta-llama/Llama-3.2-3B-Instruct")
 dummy = DummyModel()
 
 
@@ -96,6 +99,9 @@ class ServerConfig:
 
 def main(cfg: ServerConfig):
     print("Hello from cs488llm-hw!")
+
+    if cfg.model.value == "dummy":
+        raise ValueError("Dummy model is not supported for pipeline API.")
 
     # model, tokenizer = cfg.model.value.create()
     # policy = LLMPolicy(model, tokenizer)
