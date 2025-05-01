@@ -1,5 +1,5 @@
 [project]
-name = "cs488llm-hw"
+name = "cs488llm"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
@@ -10,7 +10,10 @@ dependencies = [
     "pillow>=11.1.0",
     "torch>=2.6.0",
     "transformers>=4.49.0",
+    "tyro>=0.9.18",
+    "webpolicy",
 ]
 
 [tool.uv.sources]
 transformers = { git = "https://github.com/huggingface/transformers", rev = "v4.49.0-Gemma-3" }
+webpolicy = { git = "https://github.com/mhyatt000/webpolicy" }
